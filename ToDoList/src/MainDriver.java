@@ -3,7 +3,10 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.Image;
 
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -19,7 +22,7 @@ public class MainDriver {
 		JLabel title = new JLabel();
 		
 		topPanel.setBackground(Color.DARK_GRAY);
-		topPanel.setPreferredSize(new Dimension(150, 80));
+		topPanel.setPreferredSize(new Dimension(150, 65));
 		
 		title.setText("To Do List");
 		title.setForeground(Color.white);
@@ -28,11 +31,24 @@ public class MainDriver {
 		
 		frame.add(topPanel, BorderLayout.NORTH);
 		
-		JLabel bodyPanel = new JLabel();
+		JPanel bodyPanel = new JPanel();
 		
-		bodyPanel.setLayout(new FlowLayout());
+		bodyPanel.setLayout(new BorderLayout());
 		bodyPanel.setBackground(Color.lightGray);
 		bodyPanel.setPreferredSize(new Dimension(750,500));
+		
+		JLabel enter = new JLabel();
+		enter.setLayout(new FlowLayout());
+		enter.setBackground(Color.DARK_GRAY);
+		enter.setPreferredSize(new Dimension(600, 100));
+		
+		bodyPanel.add(enter, BorderLayout.CENTER);
+		
+		ImageIcon check = new ImageIcon("check.jpg");
+		
+		JButton button = new JButton();
+		button.setPreferredSize(new Dimension(50, 50));
+
 		
 		/*
 		JLabel instruction = new JLabel();
@@ -43,8 +59,10 @@ public class MainDriver {
 		
 		JTextField taskName = new JTextField();
 		taskName.setPreferredSize(new Dimension(200, 50));	
+		taskName.setFont(new Font("Times New Roman", Font.BOLD, 25));
 		
-		bodyPanel.add(taskName);
+		enter.add(taskName);
+		enter.add(button);
 		
 		frame.add(bodyPanel);
 		
